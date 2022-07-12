@@ -57,10 +57,10 @@
       <TableView fx:id="tblStudent" layoutX="43.0" layoutY="428.0" prefHeight="318.0" prefWidth="981.0" stylesheets="@../assets/styles/Table.css">
          <columns>
             <TableColumn fx:id="colStudentID" prefWidth="113.0" text="Student ID" />
-            <TableColumn fx:id="colName" prefWidth="221.0" text="Name" />
-            <TableColumn fx:id="colNIC" prefWidth="129.0" text="NIC" />
-            <TableColumn fx:id="colAddress" prefWidth="138.0" text="Address" />
-            <TableColumn fx:id="colEmail" prefWidth="193.0" text="Email" />
+            <TableColumn fx:id="colName" prefWidth="239.0" text="Name" />
+            <TableColumn fx:id="colNIC" prefWidth="139.0" text="NIC" />
+            <TableColumn fx:id="colAddress" prefWidth="134.0" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="169.0" text="Email" />
             <TableColumn fx:id="colMobileNumber" prefWidth="186.0" text="Mobile Number" />
          </columns>
          <cursor>
