@@ -8,8 +8,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import util.CrudUtil;
 import view.tdm.StudentTM;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
@@ -53,13 +55,22 @@ public class ManageStudentFormController {
 
     private void loadAllStudents(){
         tblStudent.getItems().clear();
-
-        /*try{
-
+        try{
+            ResultSet result = CrudUtil.execute("SELECT * FROM Student");
+            while(result.next()){
+                tblStudent.getItems().add(new StudentTM(
+                        result.getString(1),
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        result.getString(5),
+                        result.getString(6)
+                ));
+            }
 
         }catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
-        }*/
+        }
     }
 
     public void searchStudentOnAction(ActionEvent event) {
