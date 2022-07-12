@@ -6,8 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import view.tdm.StudentTM;
+
+import java.sql.SQLException;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 
 /**
  * @author : Ashan Sandeep
@@ -36,13 +41,28 @@ public class ManageStudentFormController {
     public JFXTextField txtMobileNumber;
 
     public void initialize(){
+        colStudentID.setCellValueFactory(new PropertyValueFactory<>("student_id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("student_name"));
+        colNIC.setCellValueFactory(new PropertyValueFactory<>("nic"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colMobileNumber.setCellValueFactory(new PropertyValueFactory<>("contact"));
 
+        loadAllStudents();
+    }
+
+    private void loadAllStudents(){
+        tblStudent.getItems().clear();
+
+        /*try{
+
+
+        }catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }*/
     }
 
     public void searchStudentOnAction(ActionEvent event) {
-    }
-
-    public void validateKeyReleasedOnAction(KeyEvent keyEvent) {
     }
 
     public void updateStudentOnAction(ActionEvent event) {
@@ -61,8 +81,5 @@ public class ManageStudentFormController {
     }
 
     public void btnAddNewStudentOnAction(ActionEvent event) {
-    }
-
-    public void searchStudentKeyReleasedOnAction(KeyEvent keyEvent) {
     }
 }
