@@ -1,14 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.ManageStudentFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="769.0" prefWidth="1066.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageStudentFormController">
+   <children>
+      <JFXTextField fx:id="txtStudentID" editable="false" labelFloat="true" layoutX="81.0" layoutY="170.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="265.0" promptText="Student ID">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="344.0" layoutY="94.0" onAction="#searchStudentOnAction" prefHeight="37.0" prefWidth="115.0" style="-fx-background-color: #009432;" text="    Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="81.0" layoutY="232.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="343.0" promptText="Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtNic" labelFloat="true" layoutX="81.0" layoutY="298.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="265.0" promptText="NIC">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="603.0" layoutY="371.0" onAction="#updateStudentOnAction" prefHeight="39.0" prefWidth="141.0" style="-fx-background-color: #3498db;" text="   Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnRemove" buttonType="RAISED" layoutX="763.0" layoutY="371.0" onAction="#removeStudentOnAction" prefHeight="39.0" prefWidth="141.0" style="-fx-background-color: #EA2027;" text="   Remove" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblStudent" layoutX="43.0" layoutY="428.0" prefHeight="318.0" prefWidth="981.0" stylesheets="@../assets/styles/Table.css">
+         <columns>
+            <TableColumn fx:id="colStudentID" prefWidth="113.0" text="Student ID" />
+            <TableColumn fx:id="colName" prefWidth="239.0" text="Name" />
+            <TableColumn fx:id="colNIC" prefWidth="139.0" text="NIC" />
+            <TableColumn fx:id="colAddress" prefWidth="134.0" text="Address" />
+            <TableColumn fx:id="colEmail" prefWidth="169.0" text="Email" />
+            <TableColumn fx:id="colMobileNumber" prefWidth="186.0" text="Mobile Number" />
+         </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="925.0" layoutY="371.0" onAction="#resetOnAction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-radius: 15; -fx-background-color: #f1c40f;" text="Reset" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="81.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Students">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/Student.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="574.0" layoutY="148.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="307.0" promptText="Address">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="613.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/icons8-available-updates-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="765.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/icons8-delete-100.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="443.0" layoutY="371.0" onAction="#addStudentOnAction" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #16a085;" text="  Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="451.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/icons8-add-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="353.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/Search.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearchStudent" layoutX="71.0" layoutY="94.0" onAction="#txtSearchStudentOnAction" onKeyReleased="#searchStudentKeyReleasedOnAction" prefHeight="40.0" prefWidth="247.0" promptText="Search Student" style="-fx-border-color: #2c3e50;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <JFXButton buttonType="RAISED" layoutX="888.0" layoutY="20.0" onAction="#btnAddNewStudentOnAction" prefHeight="35.0" prefWidth="141.0" style="-fx-cursor: hand; -fx-background-color: #f39c12 #f39c12;" text="+ New Student" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="574.0" layoutY="212.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="247.0" promptText="Email">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtMobileNumber" labelFloat="true" layoutX="574.0" layoutY="280.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="307.0" promptText="Mobile Number">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+   </children>
 </AnchorPane>
