@@ -7,6 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import view.tdm.StudentTM;
 
 /**
  * @author : Ashan Sandeep
@@ -21,7 +22,7 @@ public class ManageStudentFormController {
     public JFXTextField txtNic;
     public JFXButton btnUpdate;
     public JFXButton btnRemove;
-    public TableView tblStudent;
+    public TableView<StudentTM> tblStudent;
     public TableColumn colStudentID;
     public TableColumn colName;
     public TableColumn colNIC;
@@ -33,6 +34,10 @@ public class ManageStudentFormController {
     public TextField txtSearchStudent;
     public JFXTextField txtEmail;
     public JFXTextField txtMobileNumber;
+
+    public void initialize(){
+
+    }
 
     public void searchStudentOnAction(ActionEvent event) {
     }
